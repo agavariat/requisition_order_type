@@ -11,7 +11,7 @@
     </record>
     <record id="requisition_order_tree" model="ir.ui.view">
         <field name="model">material.purchase.requisition</field>
-        <field name="inherit_id" ref="bi_material_purchase_requisitions.requisition_line_tree_view" />
+        <field name="inherit_id" ref="bi_material_purchase_requisitions.material_purchase_requisition_tree_view" />
         <field name="arch" type="xml">
             <field name="state" position="before">
                 <field
