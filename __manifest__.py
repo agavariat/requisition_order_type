@@ -14,7 +14,7 @@
         "security/security.xml",
         "views/view_requisition_order_type.xml",
         "views/view_requisition_order.xml",
-        "data/requisition_order_type",
+        "data/requisition_order_type.xml",
     ],
     "installable": True,
     "auto_install": False,
