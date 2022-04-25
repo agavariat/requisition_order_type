@@ -11,7 +11,7 @@ class RequisitionOrderType(models.Model):
 
     @api.model
     def _get_domain_sequence_id(self):
-        seq_type = self.env.ref("purchase.seq_purchase_order")
+        seq_type = self.env.ref("bi_material_purchase_requisitions.material_purchase_requisition")
         return [
             ("code", "=", seq_type.code),
             ("company_id", "in", [False, self.env.company.id]),
@@ -19,7 +19,7 @@ class RequisitionOrderType(models.Model):
 
     @api.model
     def _default_sequence_id(self):
-        seq_type = self.env.ref("purchase.seq_purchase_order")
+        seq_type = self.env.ref("bi_material_purchase_requisitions.material_purchase_requisition")
         return seq_type.id
 
     name = fields.Char(required=True)
