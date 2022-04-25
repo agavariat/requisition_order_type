@@ -29,10 +29,10 @@ class MaterialPurchaseRequisition(models.Model):
 
     @api.model
     def create(self, vals):
-        if vals.get("name", "/") == "/" and vals.get("order_type"):
+        if vals.get("sequence", "/") == "/" and vals.get("order_type"):
             requisition_type = self.env["requisition.order.type"].browse(vals["order_type"])
             if requisition_type.sequence_id:
-                vals["name"] = requisition_type.sequence_id.next_by_id()
+                vals["sequence"] = requisition_type.sequence_id.next_by_id()
         return super().create(vals)
 
     @api.constrains("company_id")
